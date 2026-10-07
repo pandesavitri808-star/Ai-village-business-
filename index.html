@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>हिंदी AI सहायक</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f4f7fb;
+      color: #222;
+    }
+
+    header {
+      background: linear-gradient(135deg, #4f46e5, #7c3aed);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 30px;
+      margin-bottom: 8px;
+    }
+
+    header p {
+      font-size: 16px;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 30px auto;
+      padding: 15px;
+    }
+
+    .hero {
+      background: white;
+      padding: 30px;
+      border-radius: 18px;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    }
+
+    .hero h2 {
+      color: #4f46e5;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      color: #666;
+      margin-bottom: 25px;
+    }
+
+    .chat-box {
+      margin-top: 20px;
+      text-align: left;
+    }
+
+    textarea {
+      width: 100%;
+      height: 120px;
+      padding: 15px;
+      border: 2px solid #ddd;
+      border-radius: 12px;
+      resize: none;
+      font-size: 16px;
+      outline: none;
+    }
+
+    textarea:focus {
+      border-color: #4f46e5;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 12px;
+      padding: 14px;
+      border: none;
+      border-radius: 12px;
+      background: #4f46e5;
+      color: white;
+      font-size: 17px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #4338ca;
+    }
+
+    .answer {
+      margin-top: 20px;
+      background: #f0f4ff;
+      padding: 18px;
+      border-radius: 12px;
+      min-height: 80px;
+      line-height: 1.6;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    .feature {
+      background: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 14px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    }
+
+    .feature h3 {
+      color: #4f46e5;
+      margin-bottom: 8px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #777;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 24px;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>🤖 हिंदी AI सहायक</h1>
+    <p>आपका स्मार्ट और उपयोगी AI Assistant</p>
+  </header>
+
+  <div class="container">
+
+    <section class="hero">
+      <h2>नमस्ते! 👋</h2>
+      <p>
+        मुझसे कोई भी सवाल पूछें और आसान हिंदी में उत्तर पाएँ।
+      </p>
+
+      <div class="chat-box">
+        <textarea id="question"
+          placeholder="अपना सवाल यहाँ लिखें..."></textarea>
+
+        <button onclick="askAI()">
+          ✨ AI से पूछें
+        </button>
+
+        <div class="answer" id="answer">
+          आपका AI उत्तर यहाँ दिखाई देगा।
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+
+      <div class="feature">
+        <h3>💡 ज्ञान</h3>
+        <p>सामान्य सवालों के जवाब पाएँ।</p>
+      </div>
+
+      <div class="feature">
+        <h3>📚 पढ़ाई</h3>
+        <p>पढ़ाई से जुड़े सवाल पूछें।</p>
+      </div>
+
+      <div class="feature">
+        <h3>⚡ तेज़ जवाब</h3>
+        <p>आसान और सरल भाषा में उत्तर।</p>
+      </div>
+
+    </section>
+
+  </div>
+
+  <footer>
+    © 2026 हिंदी AI सहायक | सभी अधिकार सुरक्षित
+  </footer>
+
+  <script>
+    function askAI() {
+
+      const question = document.getElementById("question").value;
+      const answer = document.getElementById("answer");
+
+      if (question.trim() === "") {
+        answer.innerHTML = "⚠️ कृपया पहले अपना सवाल लिखें।";
+        return;
+      }
+
+      answer.innerHTML =
+        "🤖 आपका सवाल मिला: <b>" +
+        question +
+        "</b><br><br>" +
+        "AI उत्तर प्राप्त करने के लिए यहाँ अपनी AI API जोड़ें।";
+    }
+  </script>
+
+</body>
+</html>
